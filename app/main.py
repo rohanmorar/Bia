@@ -3,8 +3,23 @@ import mediapipe as mp
 import ExerciseRepCounter
 import MediapipePoseDetector
 
+running, hand_choice = True, None
+
+while running:
+    try:
+        input_val = int(input("*** CHOOSE HAND *** \nEnter '0' for LEFT \nEnter '1' for RIGHT\n"))
+        if input_val not in (0, 1):
+            print("Invalid input. Please enter 0 or 1.")
+            continue
+        else:
+            hand_choice = "left" if input_val == 0 else "right"
+            break
+    except ValueError:
+        print("Invalid input. Please enter 0 or 1.")
+        continue
+
 pose_detector = MediapipePoseDetector.MediapipePoseDetector()
-bicep_curl_rep_counter = ExerciseRepCounter.ExerciseRepCounter()
+isolated_bicep_curl_rep_counter = ExerciseRepCounter.ExerciseRepCounter(hand_choice)
 
 cap = cv2.VideoCapture(0)
 
@@ -32,7 +47,7 @@ while cap.isOpened():
         continue
 
     # Process landmarks with exercise rep counter
-    rep_count = bicep_curl_rep_counter.process_landmarks(landmarks, image)
+    rep_count = isolated_bicep_curl_rep_counter.process_landmarks(landmarks, image)
 
     # Display image
     cv2.imshow('Pose detection', image)

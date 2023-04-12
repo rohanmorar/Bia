@@ -4,9 +4,30 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="This is where your description goes">
+    <meta name="keywords" content="one, two, three">
     <title>Bia</title>
+    <!-- external CSS link -->
+    <link rel="stylesheet" href="../static/css/normalize.css">
+    <link rel="stylesheet" href="../static/css/style.css">
 </head>
 <body>
-    Be improving always
+    <h1>Be Improving Always</h1>
+    <div>
+        <h3>Exercise Selection</h3>
+        <label>Choose an exercise:</label>
+        <select class="exercise_select">
+            <option value="isolated_curl">Isolated Bicep Curl</option>
+        </select>
+      </div>
+    <div class = "hand_select">
+        <label>Choose hand:</label>
+        <select class="hand_select">
+            <option value="right">Right</option>
+            <option value="left">Left</option>
+        </select>
+    </div>
+    <button id="begin_workout_button">Begin</button>
+    <script type="text/javascript" src="../static/js/main.js"></script>
 </body>
 </html>
