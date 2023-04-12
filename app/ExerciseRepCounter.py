@@ -12,6 +12,7 @@ class ExerciseRepCounter:
         self.wrist = None
         self.hip = None
         self.shoulder = None
+        print(self.hand)
 
     # Returns the distance between two landmarks
     def calculate_distance(self, landmark1, landmark2):
@@ -37,8 +38,8 @@ class ExerciseRepCounter:
             self.wrist = landmarks[mp.solutions.pose.PoseLandmark.LEFT_WRIST]
             self.hip = landmarks[mp.solutions.pose.PoseLandmark.LEFT_HIP]
             self.shoulder = landmarks[mp.solutions.pose.PoseLandmark.LEFT_SHOULDER]
-        else:
-            raise ValueError(f"Invalid hand argument: {self.hand}. Please use either 'left' or 'right'.")
+        # else:
+        #     raise ValueError(f"Invalid hand argument: {self.hand}. Please use either 'left' or 'right'.")
 
     def process_landmarks(self, landmarks, image = None):
         # Set up the landmarks for use
