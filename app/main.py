@@ -7,9 +7,9 @@ import time
 
 running, hand_choice = True, None
 
-hand_choice = sys.argv[1]
+# hand_choice = sys.argv[1]
 pose_detector = MediapipePoseDetector.MediapipePoseDetector()
-isolated_bicep_curl_rep_counter = ExerciseRepCounter.ExerciseRepCounter(hand_choice)
+isolated_bicep_curl_rep_counter = ExerciseRepCounter.ExerciseRepCounter('right') # hand_choice
 
 cap = cv2.VideoCapture(0)
 

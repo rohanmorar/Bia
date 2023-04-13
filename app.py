@@ -13,10 +13,12 @@ def run_program():
     request_data = request.get_json()
 
     # Check if the "start" key is in the request data
-    if 'start' in request_data and 'hand' in request_data and request_data['start'] == True:
+    #if 'start' in request_data and 'hand' in request_data and request_data['start'] == True:
+    if 'start' in request_data and request_data['start'] == True:
         # Launch the program as a subprocess
-        print(request_data['hand'])
-        subprocess.Popen(['python', 'app/main.py', request_data['hand']], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+        # print(request_data['hand'])
+        # ['python', 'app/main.py', request_data['hand']]
+        subprocess.Popen(['python', 'app/main.py'], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
 
         # Return a response indicating success
         return {'status': 'success'}

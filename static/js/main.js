@@ -5,7 +5,7 @@ begin_button.addEventListener('click', async () => {
     var data = {start: true, 'hand': hand_selection}
 
     try {
-      const response = await fetch('http://127.0.0.1:5000/run-program', {
+      const response = await fetch('https://bia-project-383604.uc.r.appspot.com/run-program', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
