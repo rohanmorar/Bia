@@ -16,7 +16,7 @@ def run_program():
     if 'start' in request_data and 'hand' in request_data and request_data['start'] == True:
         # Launch the program as a subprocess
         print(request_data['hand'])
-        subprocess.Popen(['python', '/Users/rohanmorar/Bia_Project/Bia/app/main.py', request_data['hand']], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+        subprocess.Popen(['python', 'app/main.py', request_data['hand']], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
 
         # Return a response indicating success
         return {'status': 'success'}
