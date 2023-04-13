@@ -1,3 +1,4 @@
+gunicorn
 absl-py==1.4.0
 attrs==22.2.0
 click==8.1.3
